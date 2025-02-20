@@ -1,0 +1,12 @@
+{
+  "name": "all-bar",
+  "version": "1.0.0",
+  "scripts": {
+    "docker:up": "docker compose up --build",
+    "docker:down": "docker compose down",
+    "docker:restart": "docker compose down && docker compose up --build",
+    "docker:logs": "docker compose logs -f",
+    "docker:ps": "docker ps",
+    "docker:prune": "docker system prune -af"
+  }
+}

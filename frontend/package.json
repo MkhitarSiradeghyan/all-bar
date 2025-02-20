@@ -6,20 +6,29 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "docker:build": "docker build -t all-bar-frontend .",
+    "docker:run": "docker run -p 3000:3000 all-bar-frontend",
+    "docker:stop": "docker stop $(docker ps -q --filter ancestor=all-bar-frontend) || true",
+    "docker:rm": "docker rm $(docker ps -aq --filter ancestor=all-bar-frontend) || true"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "next": "15.1.7"
+    "@effector/next": "^0.7.0",
+    "effector": "^23.3.0",
+    "effector-react": "^23.3.0",
+    "next": "15.1.7",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "sass": "^1.85.0"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "15.1.7",
-    "@eslint/eslintrc": "^3"
+    "typescript": "^5"
   }
 }
